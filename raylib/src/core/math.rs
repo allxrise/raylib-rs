@@ -77,20 +77,6 @@ impl Into<na::Vector2<f32>> for Vector2 {
 }
 
 #[cfg(feature = "nalgebra_interop")]
-impl From<na::Vector2<f32>> for Vector2 {
-    fn from(v: na::Vector2<f32>) -> Vector2 {
-        Vector2 { x: v.x, y: v.y }
-    }
-}
-
-#[cfg(feature = "nalgebra_interop")]
-impl From<na::base::coordinates::XY<f32>> for Vector2 {
-    fn from(v: na::base::coordinates::XY<f32>) -> Vector2 {
-        Vector2 { x: v.x, y: v.y }
-    }
-}
-
-#[cfg(feature = "nalgebra_interop")]
 impl Into<na::Vector2<f32>> for Vector2 {
     fn into(self) -> na::Vector2<f32> {
         na::Vector2::new(self.x, self.y)
@@ -418,24 +404,6 @@ impl From<na::base::coordinates::XYZ<f32>> for Vector3 {
             x: v.x,
             y: v.y,
             z: v.z
-        }
-    }
-}
-
-#[cfg(feature = "nalgebra_interop")]
-impl Into<na::Vector3<f32>> for Vector3 {
-    fn into(self) -> na::Vector3<f32> {
-        na::Vector3::new(self.x, self.y, self.z)
-    }
-}
-
-#[cfg(feature = "nalgebra_interop")]
-impl From<na::Vector3<f32>> for Vector3 {
-    fn from(v: na::Vector3<f32>) -> Vector3 {
-        Vector3 {
-            x: v.x,
-            y: v.y,
-            z: v.z,
         }
     }
 }
@@ -1271,13 +1239,6 @@ impl From<na::geometry::Quaternion<f32>> for Quaternion {
             z: q.coords.z,
             w: q.coords.w,
         }
-    }
-}
-
-#[cfg(feature = "nalgebra_interop")]
-impl Into<na::geometry::Quaternion<f32>> for Quaternion {
-    fn into(self) -> na::geometry::Quaternion<f32> {
-        na::geometry::Quaternion::new(self.x, self.y, self.z, self.w)
     }
 }
 
