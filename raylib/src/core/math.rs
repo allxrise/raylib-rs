@@ -1224,18 +1224,6 @@ impl From<na::geometry::Quaternion<f32>> for Quaternion {
     }
 }
 
-#[cfg(feature = "nalgebra_interop")]
-impl From<na::geometry::Quaternion<f32>> for Quaternion {
-    fn from(q: na::geometry::Quaternion<f32>) -> Quaternion {
-        Quaternion {
-            x: q.coords.x,
-            y: q.coords.y,
-            z: q.coords.z,
-            w: q.coords.w
-        }
-    }
-}
-
 impl From<(f32, f32, f32, f32)> for Quaternion {
     #[inline]
     fn from((x, y, z, w): (f32, f32, f32, f32)) -> Quaternion {
